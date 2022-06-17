@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+:root{
+    --darkest: #101b39;
+    --darker: #333136;
+    --light: #6f6d72;
+    --lighter: #b4b1b8;
+    --lightest: #e9e8ee;
+    --highlight: #ECB365;
+    --purple-haze: #430d4b;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to bottom,var(--darkest), var(--darker));
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Menu */
+.menu-container{
+    top: 0;
+    left: 0;
+}
+.menu-trigger{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+    z-index: 100;
+}
+
+    /* Menu Burger */
+    .menu-burger{
+        width: 50px;
+        height: 6px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(255, 101, 47, .2);
+        transition: all .25s ease-in-out;
+    }
+    .menu-burger::before,
+    .menu-burger::after{
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 6px;
+        background: white;
+        border-radius: 5px;
+        box-shadow:  0 2px 5px rgba(255, 101, 47, .2);
+        transition: all .25s ease-in-out;
+    }
+    .menu-burger::before{
+        transform: translateY(-16px);
+    }
+    .menu-burger::after{
+        transform: translateY(16px);
+    }
+        /* Animation */
+        .menu-trigger.open .menu-burger{
+            background: transparent;
+            box-shadow: none;
+            z-index: 1;
+        }
+        .menu-trigger.open .menu-burger::before{
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+        .menu-trigger.open .menu-burger::after{
+            transform: rotate(-45deg);
+            z-index: 1;
+        }
+        /* Animation */
+    /* Menu Burger */
+    /* Menu Popup */
+    .menu-popup{
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 30%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        transition: all .2s ease;
+        z-index: 1;
+    }
+        /* Animation */
+        .menu-popup .active {
+            width: 100%;
+            opacity: 1;
+        }
+        /* Animation */
+    .menu-popup > div {
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba(152, 193, 217, 0.80);
+        display: flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        opacity: 0;
+    }
+    .menu-popup > div > ul{
+        list-style: none;
+        z-index: 1;
+    }
+    .menu-popup > div > ul li{
+        padding: 1rem;
+        margin: 0;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+    }
+    .menu-popup > div > ul li a{
+        text-decoration: none;
+        color: var(--light);
+        font-weight: 900;
+        transition: all .15s ease;
+    }
+    .menu-popup > div > ul li a:hover{
+        color: var(--highlight);
+    }
+    /* Menu Popup */
+/* Menu */
+
+/* Home Page */
+.main-background{
+    color: white;    
+    height: 45.97rem;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(SpaceSurface.png);
+    justify-content: center;
+    align-items: center;
+}
+.main-background .home-content{
+    position: relative;
+    font-size: 5rem;
+    top: 40%;
+    left: 33%;
+}
+.main-background .home-content i{
+    width: 2.5rem;
+    height: 2.5rem;
+    border: solid white;
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transition: all .1s ease;
+}
+.main-background .home-content i:hover{
+    border: solid var(--highlight);
+    cursor: pointer;
+}
+.main-background .home-subtext{
+    position: relative;
+    font-size: 1rem;
+    top: 40%;
+    left: 34%;
+}
+.main-background .home-subtext u{
+    color: var(--highlight);
+}
+/* Home Page */
+
+/* Tagline */
+.tagline::before{
+    content: '';
+    margin: 0;
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+    background: linear-gradient(to top, var(--lightest), transparent);
+    z-index: 100;
+}
+.tagline{
+    width: 100vw;
+    background-color: var(--lightest);
+    height: 30rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.tagline > div{
+    height: 60vh;
+    width: 80vw;
+    box-shadow: 0 2px 5px rgba(78, 77, 77, 0.658);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.tagline > div > div {
+    height: 55vh;
+    width: 77vw;
+    border: 2px solid rgb(221, 144, 157);
+}
+.tagline > div > div > div {
+    font-size: 2rem;
+    font-weight: 100;
+    color: var(--darker);
+    position: relative;
+    top: 5%;
+    text-align: center;
+    margin: 0 15rem 0 15rem;
+}
+.tagline > div > div > div > div{
+    font-size: 1rem;
+    margin: 2rem;
+}
+/* Tagline */
+
+.transition-pricing{
+    background: linear-gradient(to bottom, var(--lightest), var(--lighter));
+    height: 20rem;
+    color: var(--purple-haze);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 5rem;
+}.transition-pricing > div{
+    border: 1px solid black;
+    box-shadow: 0 2px 5px rgba(78, 77, 77, 0.658);
+    margin: 0 4rem 0 4rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.25);
+}.transition-pricing > div > div{
+    border: 2px solid var(--lightest);
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Pricing and Activities */
+.pricing{
+    justify-content: center;
+    align-items: center;
+    background-color: var(--lighter);
+    padding: 1rem;
+}
+.pricing div{
+    text-align: center;
+    display: flex;
+    padding: 1rem;
+}
+.pricing div > div{
+    font-size: 2rem;
+    color: rgb(161, 97, 65);
+    width: 60%;
+    display: flex;
+}
+.pricing div > div > div{
+    font-size: 1rem;
+    color: var(--darkest);
+    height: fit-content;
+    display: flex;
+}
+.pricing div .image{
+    height: 25rem;
+    width: 40%;
+}
+.pricing div .image img{
+    width: 100%;
+    background-size: auto;
+    border-radius: 5rem;
+}
+.pricing #right{
+    border-width: 0 6px 6px 0;
+    right: 0;
+}
+.pricing #left{
+    border-width: 6px 0px 0px 6px;
+    left: 0;
+}
+/* Pricing */
+
+.transition-activity{
+    background: linear-gradient(to bottom, var(--lighter), var(--highlight));
+    height: 20rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 5rem;
+}.transition-activity > div{
+    border: 1px solid black;
+    box-shadow: 0 2px 5px rgba(78, 77, 77, 0.658);
+    margin: 0 4rem 0 4rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.25);
+}.transition-activity > div > div{
+    border: 2px solid var(--lightest);
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Activities */
+.activities {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--highlight);
+    display: flex;
+}
+.activities div{
+    width: 100%;
+    height: 80%;
+    background-color: white;
+    margin: 1rem 1rem 1rem 1rem;
+}
+.activities div > div{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.activities div .content{
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-align: left;
+    height: 7rem;
+}
+.activities div .image{
+    background-size: cover;
+    height: 18rem;
+    width: 100%;
+    margin: 0;
+    border-radius: 4rem;
+}
+/* Activities */
+/* Pricing and Activites */
+
+.transition-dining{
+    background: linear-gradient(to top, var(--light), var(--highlight));
+    height: 20rem;
+    color: var(--darkest);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 4rem;
+}.transition-dining > div{
+    border: 1px solid black;
+    box-shadow: 0 2px 5px rgba(78, 77, 77, 0.658);
+    margin: 0 4rem 0 4rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.25);
+}.transition-dining > div > div{
+    border: 2px solid var(--lightest);
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Dining */
+.dining{
+    width: 100%;
+    height: fit-content;
+    background-color: var(--light);
+}
+.dining > div{
+    padding: 1rem;
+    display: flex;
+}
+.dining > div > .image{
+    height: 40rem;
+    width: 40%;
+    background-size: cover;
+    border-radius: 5rem;
+}
+.dining > div > .content{
+    width: 60%;
+    height: fit-content;
+    margin: 2rem 2rem 2rem 2rem;
+    background-color: white;
+    border-radius: 2rem;
+    text-align: center;
+    font-size: 3rem;
+}
+.dining > div > .content .sub-text{
+    font-size: 1.5rem;
+    padding: 2rem;
+}
+/* Dining */
+
+.transition-contact-us{
+    background: linear-gradient(to bottom, var(--light), white);
+    height: 20rem;
+    color: var(--darkest);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 2.5rem;
+}.transition-contact-us > div{
+    border: 1px solid black;
+    box-shadow: 0 2px 5px rgba(78, 77, 77, 0.658);
+    margin: 0 4rem 0 4rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.25);
+}.transition-contact-us > div > div{
+    border: 2px solid var(--lightest);
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Contact us and Book now*/
+.contact-us{
+    width: 100%;
+    height: 25rem;
+    background-color: white;
+    display: flex;
+}
+.contact-content{
+    width: 60%;
+    text-align: center;
+}
+.contact-content .header{
+    font-size: 4rem;
+    font-weight: 300;
+}
+.contact-content .content{
+    text-align: left;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 3rem;
+}
+
+.book-now-content{
+    width: 40%;
+    background-color: rgba(16, 27, 57, .3);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.book-now-content .header{
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 1rem 0 2rem 0;
+}
+.book-now-content .content{
+    justify-content: center;
+    align-items: center;
+}
+.book-now-content .content .btn{
+    margin-top: 4rem;
+    transition: all .4s ease;
+    font-size: 2rem;
+}
+.book-now-content .content .btn:hover{
+    cursor: pointer;
+    color: var(--highlight);
+    font-size: 3rem;
+}
+/* Contact us and Book now*/
