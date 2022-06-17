@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
 
+::-webkit-scrollbar{
+    width: 4px;
+    background-color: var(--darkest);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--highlight);
+    border-radius: 2rem;
+}
+
 :root{
     --darkest: #101b39;
     --darker: #333136;
